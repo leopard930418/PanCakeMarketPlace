@@ -21,7 +21,7 @@ import useBUSDPrice from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useAccount } from 'wagmi'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
-import { useGetRemovedTokenAmounts } from 'views/RemoveLiquidity/RemoveStableLiquidity/hooks/useStableDerivedBurnInfo'
+// import { useGetRemovedTokenAmounts } from 'views/RemoveLiquidity/RemoveStableLiquidity/hooks/useStableDerivedBurnInfo'
 import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
 
 import { useLPApr } from 'state/swap/useLPApr'
@@ -141,7 +141,7 @@ const withLPValues = withLPValuesFactory({
 })
 
 const withStableLPValues = withLPValuesFactory({
-  useLPValuesHook: useGetRemovedTokenAmounts,
+  useLPValuesHook: useTokensDeposited,
   hookArgFn: ({ userPoolBalance }) => ({
     lpAmount: userPoolBalance?.quotient?.toString(),
   }),
