@@ -84,7 +84,8 @@ interface CurrencyInputPanelProps {
   currency?: Currency | null
   disableCurrencySelect?: boolean
   hideBalance?: boolean
-  pair?: Pair | StablePair | null
+  // pair?: Pair | StablePair | null
+  pair?: Pair | null
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
