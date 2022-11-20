@@ -73,7 +73,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
   const [zapMode, toggleZapMode] = useZapModeManager()
   const [subgraphHealth, setSubgraphHealth] = useSubgraphHealthIndicatorManager()
   const [userUsernameVisibility, setUserUsernameVisibility] = useUserUsernameVisibility()
-  const { onChangeRecipient } = useSwapActionHandlers()
+  // const { onChangeRecipient } = useSwapActionHandlers()
   const { chainId } = useActiveChainId()
 
   const { t } = useTranslation()
@@ -91,10 +91,10 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
 
   const handleExpertModeToggle = () => {
     if (expertMode) {
-      onChangeRecipient(null)
+      // onChangeRecipient(null)
       toggleExpertMode()
     } else if (!showExpertModeAcknowledgement) {
-      onChangeRecipient(null)
+      // onChangeRecipient(null)
       toggleExpertMode()
     } else {
       setShowConfirmExpertModal(true)
