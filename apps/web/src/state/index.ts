@@ -10,7 +10,7 @@ import { updateVersion } from './global/actions'
 import lotteryReducer from './lottery'
 import mint from './mint/reducer'
 import multicall from './multicall/reducer'
-import poolsReducer from './pools'
+// import poolsReducer from './pools'
 // import swap from './swap/reducer'
 import transactions from './transactions/reducer'
 import user from './user/reducer'
@@ -34,7 +34,7 @@ const persistedReducer = persistReducer(
     global: globalReducer,
     farms: farmsReducer,
     farmsV1: farmsReducerV1,
-    pools: poolsReducer,
+    // pools: poolsReducer,
     lottery: lotteryReducer,
     pottery: potteryReducer,
 
