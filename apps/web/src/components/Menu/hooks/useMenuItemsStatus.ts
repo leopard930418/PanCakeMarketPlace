@@ -6,14 +6,14 @@ import { useChainCurrentBlock } from 'state/block/hooks'
 // import { getStatus } from 'views/Ifos/hooks/helpers'
 // import { usePotteryStatus } from './usePotteryStatus'
 import { useCompetitionStatus } from './useCompetitionStatus'
-import { useVotingStatus } from './useVotingStatus'
+// import { useVotingStatus } from './useVotingStatus'
 
 export const useMenuItemsStatus = (): Record<string, string> => {
   const currentBlock = useChainCurrentBlock(ChainId.BSC)
   const activeIfo = useActiveIfoWithBlocks()
   const competitionStatus = useCompetitionStatus()
   // const potteryStatus = usePotteryStatus()
-  const votingStatus = useVotingStatus()
+  // const votingStatus = useVotingStatus()
 
   const ifoStatus =    null;
 
@@ -22,9 +22,9 @@ export const useMenuItemsStatus = (): Record<string, string> => {
       '/competition': competitionStatus,
       '/ifo': ifoStatus === 'coming_soon' ? 'soon' : ifoStatus,
       
-      ...(votingStatus && {
+      ...({
         '/voting': 'vote_now',
       }),
     }
-  }, [competitionStatus, ifoStatus, votingStatus])
+  }, [competitionStatus, ifoStatus])
 }
