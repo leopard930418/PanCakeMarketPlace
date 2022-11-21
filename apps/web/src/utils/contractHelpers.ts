@@ -186,15 +186,15 @@ export const getIfoV2Contract = (address: string, signer?: Signer | Provider) =>
 export const getIfoV3Contract = (address: string, signer?: Signer | Provider) => {
   return getContract({ abi: ifoV3Abi, address, signer })
 }
-export const getSouschefContract = (id: number, signer?: Signer | Provider) => {
-  const config = poolsConfig.find((pool) => pool.sousId === id)
-  const abi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
-  return getContract({ abi, address: getAddress(config.contractAddress), signer }) as SousChef
-}
-export const getSouschefV2Contract = (id: number, signer?: Signer | Provider) => {
-  const config = poolsConfig.find((pool) => pool.sousId === id)
-  return getContract({ abi: sousChefV2, address: getAddress(config.contractAddress), signer }) as SousChefV2
-}
+// export const getSouschefContract = (id: number, signer?: Signer | Provider) => {
+//   const config = poolsConfig.find((pool) => pool.sousId === id)
+//   const abi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
+//   return getContract({ abi, address: getAddress(config.contractAddress), signer }) as SousChef
+// }
+// export const getSouschefV2Contract = (id: number, signer?: Signer | Provider) => {
+//   const config = poolsConfig.find((pool) => pool.sousId === id)
+//   return getContract({ abi: sousChefV2, address: getAddress(config.contractAddress), signer }) as SousChefV2
+// }
 
 export const getPointCenterIfoContract = (signer?: Signer | Provider) => {
   return getContract({ abi: pointCenterIfo, address: getPointCenterIfoAddress(), signer }) as PointCenterIfo
