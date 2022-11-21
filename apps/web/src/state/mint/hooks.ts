@@ -24,7 +24,7 @@ import useTotalSupply from 'hooks/useTotalSupply'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useGasPrice } from 'state/user/hooks'
-import { warningSeverity } from 'utils/exchange'
+// import { warningSeverity } from 'utils/exchange'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { useAccount } from 'wagmi'
 import { AppState, useAppDispatch } from '../index'
@@ -581,7 +581,7 @@ export function useZapIn({
     )
   }, [pair, swapTokens, zapInEstimated, swapTokenField])
 
-  const priceSeverity = overLimitZapRatio || zapInEstimatedError ? 4 : priceImpact ? warningSeverity(priceImpact) : 0
+  const priceSeverity = overLimitZapRatio || zapInEstimatedError ? 4 : priceImpact ? 0 : 0
 
   const { onFieldAInput, onFieldBInput } = useMintActionHandlers(false)
 
