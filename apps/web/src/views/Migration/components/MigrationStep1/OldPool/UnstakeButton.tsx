@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
 import ifoPoolAbi from 'config/abi/ifoPool.json'
-import { vaultPoolConfig } from 'config/constants/pools'
+// import { vaultPoolConfig } from 'config/constants/pools'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import React, { useMemo } from 'react'
@@ -15,7 +15,7 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { cakeVaultAddress, ifoPoolV1Contract, useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
 import { Token } from '@pancakeswap/sdk'
 import { useFetchUserPools } from '../../../hook/V1/Pool/useFetchUserPools'
-import useUnstakePool from '../../../hook/V1/Pool/useUnstakePool'
+// import useUnstakePool from '../../../hook/V1/Pool/useUnstakePool'
 
 export interface UnstakeButtonProps {
   pool: Pool.DeserializedPool<Token>
@@ -40,7 +40,7 @@ const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ 
       : getContract({ abi: ifoPoolAbi, address: ifoPoolV1Contract, signer })
   }, [signer, vaultKey])
 
-  const { onUnstake } = useUnstakePool(sousId, pool.enableEmergencyWithdraw)
+  // const { onUnstake } = {}
 
   const isNeedUnstake = vaultKey ? userShares?.gt(0) : new BigNumber(userData.stakedBalance).gt(0)
 
@@ -56,7 +56,7 @@ const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ 
   const onPresentVaultUnstake = async () => {
     const receipt = await fetchWithCatchTxError(() => {
       return callWithGasPrice(vaultPoolContract, 'withdrawAll', undefined, {
-        gasLimit: vaultPoolConfig[pool.vaultKey].gasLimit,
+        gasLimit: 0,
       })
     })
 
@@ -74,7 +74,7 @@ const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ 
   const onPresentUnstake = async () => {
     const receipt = await fetchWithCatchTxError(() => {
       const stakedAmount = getFullDisplayBalance(userData.stakedBalance, stakingToken.decimals, stakingToken.decimals)
-      return onUnstake(stakedAmount, stakingToken.decimals)
+      return null;
     })
 
     if (receipt?.status) {
