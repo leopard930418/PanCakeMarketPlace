@@ -1,20 +1,20 @@
 import BigNumber from 'bignumber.js'
-import { UNLOCK_FREE_DURATION, BOOST_WEIGHT, DURATION_FACTOR, MAX_LOCK_DURATION } from 'config/constants/pools'
+// import { UNLOCK_FREE_DURATION, BOOST_WEIGHT, DURATION_FACTOR, MAX_LOCK_DURATION } from 'config/constants/pools'
 import { addWeeks, addDays } from 'date-fns'
 import { VaultPosition, getVaultPosition } from './cakePool'
-import { getCakeVaultV2Contract } from './contractHelpers'
+// import { getCakeVaultV2Contract } from './contractHelpers'
 
 describe('cakePool', () => {
-  it.each([
-    ['BOOST_WEIGHT', BOOST_WEIGHT],
-    ['UNLOCK_FREE_DURATION', UNLOCK_FREE_DURATION],
-    ['DURATION_FACTOR', DURATION_FACTOR],
-    ['MAX_LOCK_DURATION', MAX_LOCK_DURATION],
-  ])('%s should be equal to SC: %s', async (method, result) => {
-    const cakeVault = getCakeVaultV2Contract()
-    const got = await cakeVault[method]()
-    expect(got.eq(result)).toBe(true)
-  })
+  // it.each([
+  //   ['BOOST_WEIGHT', BOOST_WEIGHT],
+  //   ['UNLOCK_FREE_DURATION', UNLOCK_FREE_DURATION],
+  //   ['DURATION_FACTOR', DURATION_FACTOR],
+  //   ['MAX_LOCK_DURATION', MAX_LOCK_DURATION],
+  // ])('%s should be equal to SC: %s', async (method, result) => {
+  //   const cakeVault = getCakeVaultV2Contract()
+  //   const got = await cakeVault[method]()
+  //   expect(got.eq(result)).toBe(true)
+  // })
   const NOW = new Date('2022-01-01').getTime()
 
   it.each([
