@@ -52,7 +52,7 @@ import {
   getPredictionsContract,
   getPredictionsV1Contract,
   getProfileContract,
-  getSouschefContract,
+  // getSouschefContract,
   getTradingCompetitionContractEaster,
   getTradingCompetitionContractFanToken,
   getTradingCompetitionContractMobox,
@@ -150,10 +150,10 @@ export const useMasterchefV1 = () => {
   return useMemo(() => getMasterchefV1Contract(signer), [signer])
 }
 
-export const useSousChef = (id) => {
-  const { data: signer } = useSigner()
-  return useMemo(() => getSouschefContract(id, signer), [id, signer])
-}
+// export const useSousChef = (id) => {
+//   const { data: signer } = useSigner()
+//   return useMemo(() => getSouschefContract(id, signer), [id, signer])
+// }
 
 export const usePointCenterIfoContract = () => {
   const { data: signer } = useSigner()

@@ -61,9 +61,9 @@ import pointCenterIfo from 'config/abi/pointCenterIfo.json'
 import lotteryV2Abi from 'config/abi/lotteryV2.json'
 import masterChef from 'config/abi/masterchef.json'
 import masterChefV1 from 'config/abi/masterchefV1.json'
-import sousChef from 'config/abi/sousChef.json'
-import sousChefV2 from 'config/abi/sousChefV2.json'
-import sousChefBnb from 'config/abi/sousChefBnb.json'
+// import sousChef from 'config/abi/sousChef.json'
+// import sousChefV2 from 'config/abi/sousChefV2.json'
+// import sousChefBnb from 'config/abi/sousChefBnb.json'
 import claimRefundAbi from 'config/abi/claimRefund.json'
 import tradingCompetitionEasterAbi from 'config/abi/tradingCompetitionEaster.json'
 import tradingCompetitionFanTokenAbi from 'config/abi/tradingCompetitionFanToken.json'
@@ -117,8 +117,8 @@ import type {
   LotteryV2,
   Masterchef,
   MasterchefV1,
-  SousChef,
-  SousChefV2,
+  // SousChef,
+  // SousChefV2,
   BunnySpecial,
   LpToken,
   ClaimRefund,
