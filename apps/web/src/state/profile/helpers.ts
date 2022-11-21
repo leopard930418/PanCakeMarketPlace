@@ -2,7 +2,7 @@ import { Profile } from 'state/types'
 import { PancakeProfile } from 'config/abi/types/PancakeProfile'
 import profileABI from 'config/abi/pancakeProfile.json'
 import { API_PROFILE } from 'config/constants/endpoints'
-import { getTeam } from 'state/teams/helpers'
+// import { getTeam } from 'state/teams/helpers'
 import { NftToken } from 'state/nftMarket/types'
 import { getNftApi } from 'state/nftMarket/helpers'
 import { multicallv2 } from 'utils/multicall'
@@ -60,8 +60,8 @@ export const getProfile = async (address: string): Promise<GetProfileResponse> =
     }
 
     const { userId, points, teamId, tokenId, collectionAddress, isActive } = transformProfileResponse(profileResponse)
-    const [team, username, nftRes] = await Promise.all([
-      getTeam(teamId),
+    const [ username, nftRes] = await Promise.all([
+      // getTeam(teamId),
       getUsername(address),
       isActive ? getNftApi(collectionAddress, tokenId.toString()) : Promise.resolve(null),
     ])
@@ -95,7 +95,7 @@ export const getProfile = async (address: string): Promise<GetProfileResponse> =
       collectionAddress,
       isActive,
       nft: nftToken,
-      team,
+      // team,
     } as Profile
 
     return { hasRegistered, profile }
