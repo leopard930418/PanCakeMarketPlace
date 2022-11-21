@@ -24,7 +24,7 @@ import {
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
-import { useCakeVaultUserData } from 'state/pools/hooks'
+// import { useCakeVaultUserData } from 'state/pools/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from '@pancakeswap/farms'
 import { useTranslation } from '@pancakeswap/localization'
@@ -172,7 +172,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const isInactive = pathname.includes('history')
   const isActive = !isInactive && !isArchived
 
-  useCakeVaultUserData()
+  // useCakeVaultUserData()
 
   usePollFarmsWithUserData()
 

@@ -21,7 +21,7 @@ import styled, { useTheme } from 'styled-components'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useBCakeTooltipContent } from 'views/Farms/components/BCakeBoosterCard'
 import { useUserLockedCakeStatus } from 'views/Farms/hooks/useUserLockedCakeStatus'
-import { weeksToSeconds } from 'views/Pools/components/utils/formatSecondsToWeeks'
+// import { weeksToSeconds } from 'views/Pools/components/utils/formatSecondsToWeeks'
 import { useGetCalculatorMultiplier } from '../hooks/useGetBoostedAPR'
 import LockDurationField from './BCakeLockedDuration'
 
@@ -51,7 +51,7 @@ const BCakeCalculator: React.FC<React.PropsWithChildren<BCakeCalculatorProps>> =
 }) => {
   const [isShow, setIsShow] = useState(true)
   const { t } = useTranslation()
-  const [duration, setDuration] = useState(() => weeksToSeconds(1))
+  const [duration, setDuration] = useState(1000)
   const { isLoading, lockedAmount, lockedStart, lockedEnd } = useUserLockedCakeStatus()
   const { state, setPrincipalFromUSDValue, setPrincipalFromTokenValue, toggleEditingCurrency, setCalculatorMode } =
     useRoiCalculatorReducer(
