@@ -196,7 +196,7 @@ const config: (
       //   ].map((item) => addMenuItemSupported(item, chainId)),
       // },
 
-      //---------Alex modified-------------------------------------------
+      
       {
         label: t('Overview'),
         href: `${nftsBaseUrl}`,
