@@ -10,6 +10,6 @@ const IndexPage = () => {
 
 // Values fetched from TheGraph and BitQuery jan 24, 2022
 
-IndexPage.chains = []
+// IndexPage.chains = []
 
 export default IndexPage
