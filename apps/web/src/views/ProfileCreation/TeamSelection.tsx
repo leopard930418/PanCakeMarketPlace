@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@pancakeswap/uikit'
 import useSWR from 'swr'
 import shuffle from 'lodash/shuffle'
-import { getTeams } from 'state/teams/helpers'
+// import { getTeams } from 'state/teams/helpers'
 import { useTranslation } from '@pancakeswap/localization'
 import SelectionCard from './SelectionCard'
 import NextStepButton from './NextStepButton'
@@ -11,8 +11,8 @@ import useProfileCreation from './contexts/hook'
 const Team: React.FC<React.PropsWithChildren> = () => {
   const { teamId: currentTeamId, actions } = useProfileCreation()
   const { t } = useTranslation()
-  const { data: teams } = useSWR('teams', async () => getTeams())
-  const teamValues = useMemo(() => (teams ? shuffle(Object.values(teams)) : []), [teams])
+  // const { data: teams } = useSWR('teams', async () => getTeams())
+  // const teamValues = useMemo(() => (teams ? shuffle(Object.values(teams)) : []), [teams])
   const handleTeamSelection = (value: string) => actions.setTeamId(parseInt(value, 10))
 
   return (
@@ -36,7 +36,7 @@ const Team: React.FC<React.PropsWithChildren> = () => {
               'There’s currently no big difference between teams, and no benefit of joining one team over another for now. So pick whichever one you like!',
             )}
           </Text>
-          {teamValues &&
+          {/* {teamValues &&
             teamValues.map((team) => {
               return (
                 <SelectionCard
@@ -55,7 +55,7 @@ const Team: React.FC<React.PropsWithChildren> = () => {
                   </Flex>
                 </SelectionCard>
               )
-            })}
+            })} */}
         </CardBody>
       </Card>
       <NextStepButton onClick={actions.nextStep} disabled={currentTeamId === null}>
